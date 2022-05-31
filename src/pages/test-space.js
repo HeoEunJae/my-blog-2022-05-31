@@ -1,16 +1,15 @@
 import React from "react";
-import Head from "../components/head";
+import Layout from "../components/layout";
 
 // styles
 
 // markup
 const test_space = () => {
   return (
-    <main>
+    <Layout>
       <title>테스트 스페이스 페이지</title>
-      <Head />
       <h1>테스트 스페이스 페이지 입니다/.</h1>
-    </main>
+    </Layout>
   );
 };
 
