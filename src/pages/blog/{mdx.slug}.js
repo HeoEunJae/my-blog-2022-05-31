@@ -3,6 +3,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as React from "react";
 import Layout from "../../components/layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { MDXProvider } from "@mdx-js/react";
+import CodeBlock from "../../components/CodeBlock";
 
 const BlogPost = ({ data }) => {
   const image =
@@ -29,7 +31,13 @@ const BlogPost = ({ data }) => {
         </>
       )}
       <hr />
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <MDXProvider
+        components={{
+          pre: CodeBlock,
+        }}
+      >
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   );
 };
